@@ -1,0 +1,10 @@
+.formControl {
+  width: 30%;
+  max-width: 250px;
+}
+.select {
+  background: #c7d8f2;
+  font-weight: bold;
+  padding-left: 12px;
+  color: #282c34;
+}
