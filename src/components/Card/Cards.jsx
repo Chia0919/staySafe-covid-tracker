@@ -4,16 +4,18 @@ import CountUp from "react-countup";
 import cx from "classnames";
 
 import styles from "./Cards.module.css";
+import { useTranslation } from "react-i18next";
 
 const Info = ({
   data: { confirmed, recovered, deaths, lastUpdate },
   selected,
   country,
 }) => {
+  const { t } = useTranslation();
+
   if (!confirmed) {
     return "Loading...";
   }
-
   return (
     <div className={styles.container}>
       <Grid container spacing={3} justify="flex-start">
@@ -36,9 +38,9 @@ const Info = ({
               color="textPrimary"
               style={{ fontWeight: "bold" }}
             >
-              {country} Overview{" "}
+              {country} {t("overview.overview")}{" "}
               <Typography color="textSecondary">
-                {new Date(lastUpdate).toDateString()}{" "}
+                {t("overview.update")} : {new Date(lastUpdate).toDateString()}{" "}
               </Typography>
             </Typography>
           </Typography>
@@ -68,7 +70,7 @@ const Info = ({
                 color="textPrimary"
                 style={{ color: "#718096", fontWeight: "bold" }}
               >
-                Confirmed
+                {t("overview.confirm")}
               </Typography>
             </Grid>
             <Grid
@@ -96,7 +98,7 @@ const Info = ({
                 color="textPrimary"
                 style={{ color: "#718096", fontWeight: "bold" }}
               >
-                Recovered
+                {t("overview.recover")}
               </Typography>
             </Grid>
             <Grid
@@ -124,7 +126,7 @@ const Info = ({
                 color="textPrimary"
                 style={{ color: "#718096", fontWeight: "bold" }}
               >
-                Deaths
+                {t("overview.death")}
               </Typography>
             </Grid>
           </Grid>
