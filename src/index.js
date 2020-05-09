@@ -4,9 +4,10 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import "./il8next/il8n";
+import BackDrop from "./components/BackDrop/BackDrop";
 ReactDOM.render(
   <React.StrictMode>
-    <Suspense fallback={<div>Loading</div>}>
+    <Suspense fallback={<BackDrop />}>
       <App />
     </Suspense>
   </React.StrictMode>,
